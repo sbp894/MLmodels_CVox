@@ -1,2 +1,4 @@
 **/*.mat
 **/*.zip
+Code/archive/*
+Datasets/archive/*
