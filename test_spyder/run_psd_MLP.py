@@ -86,7 +86,8 @@ print(f"Training accuracy={np.sum(y_train_clean==y_train_pred)/len(y_train_pred)
 
 
 ## 
-tf.random.set_random_seed(1234)  # applied to achieve consistent results
+# tf.random.set_random_seed(1234)  # applied to achieve consistent results
+tf.random.set_seed(1234)  # applied to achieve consistent results
 
 # Define the model 
 MLPclean = Sequential(
@@ -124,7 +125,8 @@ ax[1].set_xlabel("Call numbers")
 print(f"Training accuracy={np.sum(y_train_clean==y_train_pred_NN)/len(y_train_clean)}\n Testing accuracy={np.sum(y_test_clean==y_test_pred_NN)/len(y_test_clean)}\n")
 
 ##
-tf.random.set_random_seed(1234)  # applied to achieve consistent results
+# tf.random.set_random_seed(1234)  # applied to achieve consistent results
+tf.random.set_seed(1234)  # applied to achieve consistent results
 
 # Define the model 
 MLPnoisy = Sequential(
@@ -199,7 +201,7 @@ for snr_value,iter in zip(all_snrs,range(len(all_snrs))):
 ##    
 plot_snr= copy.deepcopy(all_snrs)
 plot_snr[np.isinf(plot_snr)] = 15
-plt.figure(1)
+plt.figure(5)
 plt.plot(plot_snr, test_accuracy_cleanMLP, label="Clean-trained")
 plt.plot(plot_snr, test_accuracy_noisyMLP, label="Noise-trained")
 plt.xlabel("SNR (dB)")
